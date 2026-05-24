@@ -1,8 +1,7 @@
 import { useState, useMemo } from "react";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Search, X, Moon, Sun } from "lucide-react";
+import { X, Moon, Sun } from "lucide-react";
 import CategorySection from "@/components/CategorySection";
 import FloatingCart from "@/components/FloatingCart";
 import FloatingActions from "@/components/FloatingActions";
@@ -82,7 +81,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-white dark:bg-black">
       {/* Header - Navbar con glassmorphism */}
       <header 
-        className="border-b border-white/20 dark:border-white/10 sticky top-0 bg-white/60 dark:bg-black/60 backdrop-blur-md z-50 shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] transition-all duration-300"
+        className="sticky top-0 bg-white/60 dark:bg-black/60 backdrop-blur-md z-50 shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] transition-all duration-300"
         style={{
           WebkitBackdropFilter: 'blur(12px)'
         }}
@@ -162,30 +161,8 @@ export default function Home() {
 
       {/* Main Content */}
       <main id="productos" className="container py-4 sm:py-8 flex-grow bg-white dark:bg-black">
-        {/* Hidden Search Input */}
-        <div className="mb-6">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
-            <Input
-              id="search-input"
-              placeholder="Buscar productos por nombre, marca, modelo..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-12 pr-4 py-3 bg-white dark:bg-gray-800 border-2 border-transparent focus:bg-white dark:focus:bg-gray-800 focus:ring-0 focus:border-amber-600 transition-all text-base font-medium"
-            />
-            {searchTerm && (
-              <button
-                onClick={() => setSearchTerm("")}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            )}
-          </div>
-        </div>
-
         {/* Filtros - Material Design - Mobile First */}
-        <div className="mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-border">
+        <div className="mb-6 sm:mb-8 pb-4 sm:pb-6">
           <div className="flex flex-col gap-3 sm:gap-4">
             {/* Filtros de categoría - Mejorados */}
             <div>
@@ -222,7 +199,7 @@ export default function Home() {
             </div>
 
             {/* Filtro de disponibilidad y acciones */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2 sm:pt-3 border-t border-border">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2 sm:pt-3">
               <Button
                 variant={showAvailableOnly ? "default" : "outline"}
                 size="sm"
@@ -275,10 +252,10 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-white dark:bg-black mt-8 sm:mt-12">
+      <footer className="bg-white dark:bg-black mt-8 sm:mt-12">
         <div className="container py-6 sm:py-8 pr-20 sm:pr-24">
           {/* Trust Badges y Legal Info */}
-          <div className="mb-8 pb-6 border-b border-border">
+          <div className="mb-8 pb-6">
             <TrustBadges />
           </div>
 
@@ -325,7 +302,7 @@ export default function Home() {
           </div>
 
           {/* Copyright */}
-          <div className="mt-6 pt-4 border-t border-border text-left">
+          <div className="mt-6 pt-4 text-left">
             <p className="text-xs text-gray-600 dark:text-white">
               © 2026 Cargadores Hoco EAC - Mar del Plata, Argentina
             </p>
