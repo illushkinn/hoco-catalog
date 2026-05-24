@@ -9,16 +9,16 @@ export default function TrustBadges() {
     <div className="flex flex-wrap items-center justify-start gap-x-3 gap-y-2 text-left max-w-2xl">
       {/* Información fiscal y comercial condensada */}
       <div className="w-full space-y-1">
-        <p className="text-sm text-gray-600 dark:text-white font-medium">
+        <p className="text-sm text-black dark:text-white font-medium">
           CUIT: 20-19025451-9 · Hoco Original
         </p>
-        <p className="text-sm text-gray-600 dark:text-white">
+        <p className="text-sm text-black dark:text-white">
           Certificación EAC · Envíos a todo el país
         </p>
       </div>
 
       {/* Defensa del Consumidor */}
-      <div className="flex items-center gap-2 text-xs text-gray-600 dark:text-white">
+      <div className="flex items-center gap-2 text-xs text-black dark:text-white">
         <Phone className="w-3 h-3" />
         <span>Defensa del Consumidor · 0800-666-1518</span>
       </div>

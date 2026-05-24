@@ -103,8 +103,7 @@ export default function ProductCard({
                   opacity: 0,
                   imageRendering: '-webkit-optimize-contrast',
                   transform: 'scale(1.05)',
-                  filter: 'contrast(1.15) brightness(1.08) saturate(1.1)',
-                  mixBlendMode: 'multiply'
+                  filter: 'contrast(1.15) brightness(1.08) saturate(1.1)'
                 }}
                 loading="lazy"
                 decoding="async"
@@ -221,8 +220,7 @@ export default function ProductCard({
               className="max-w-full max-h-full object-contain"
               style={{
                 imageRendering: '-webkit-optimize-contrast',
-                filter: 'contrast(1.15) brightness(1.08) saturate(1.1)',
-                mixBlendMode: 'multiply'
+                filter: 'contrast(1.15) brightness(1.08) saturate(1.1)'
               }}
               onClick={(e) => e.stopPropagation()}
             />
