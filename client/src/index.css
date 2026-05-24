@@ -276,4 +276,28 @@
       max-width: 1280px;
     }
   }
+
+  /* Mejoras de renderizado de imágenes de productos */
+  .product-image-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  }
+
+  .dark .product-image-container {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  }
+
+  /* Optimización de renderizado de imágenes */
+  img[loading="lazy"] {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* Simular transparencia en imágenes con fondo blanco */
+  .product-image-blend {
+    mix-blend-mode: multiply;
+  }
+
+  .dark .product-image-blend {
+    mix-blend-mode: screen;
+  }
 }
