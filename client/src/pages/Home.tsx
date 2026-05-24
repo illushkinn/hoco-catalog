@@ -121,7 +121,7 @@ export default function Home() {
             {/* Texto Hero */}
             <div className="text-center md:text-left space-y-4 sm:space-y-6">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white leading-tight">
-                Accesorios de Calidad para tu Tienda
+                Accesorios de Calidad<br className="sm:hidden" /> para tu Tienda
               </h2>
               <div className="space-y-1">
                 <p className="text-base sm:text-lg text-black dark:text-white max-w-xl mx-auto md:mx-0">

@@ -98,7 +98,13 @@ export default function ProductCard({
                 src={allImages[currentImageIndex]}
                 alt={name}
                 className="w-full h-full object-contain transition-opacity duration-300"
-                style={{ objectPosition: 'center center', opacity: 0 }}
+                style={{ 
+                  objectPosition: 'center center', 
+                  opacity: 0,
+                  imageRendering: '-webkit-optimize-contrast',
+                  transform: 'scale(1.05)',
+                  filter: 'contrast(1.1) brightness(1.05)'
+                }}
                 loading="lazy"
                 decoding="async"
                 fetchPriority="low"
@@ -212,6 +218,10 @@ export default function ProductCard({
               src={allImages[modalImageIndex]}
               alt={name}
               className="max-w-full max-h-full object-contain"
+              style={{
+                imageRendering: '-webkit-optimize-contrast',
+                filter: 'contrast(1.1) brightness(1.05)'
+              }}
               onClick={(e) => e.stopPropagation()}
             />
 
