@@ -1,14 +1,13 @@
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { X, Moon, Sun } from "lucide-react";
+import { X } from "lucide-react";
 import CategorySection from "@/components/CategorySection";
 import FloatingCart from "@/components/FloatingCart";
 import FloatingActions from "@/components/FloatingActions";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import { PRODUCTS_DATA, CATEGORIES } from "@/const";
 import TrustBadges from "@/components/TrustBadges";
-import { useTheme } from "@/contexts/ThemeContext";
 
 /**
  * Página principal del catálogo de accesorios para celulares
@@ -23,7 +22,6 @@ import { useTheme } from "@/contexts/ThemeContext";
  * - Integración con WhatsApp
  */
 export default function Home() {
-  const { theme, toggleTheme } = useTheme();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
     new Set() // Vacío inicialmente - sin categorías seleccionadas
@@ -85,48 +83,34 @@ export default function Home() {
         style={{
           WebkitBackdropFilter: 'blur(12px)'
         }}
-      >        <div className="container py-3 sm:py-4">
-          <div className="flex items-center justify-between gap-4">
-            {/* Hamburger Menu */}
+      >
+        <div className="container py-1.5 sm:py-2">
+          <div className="flex items-center justify-end">
             <HamburgerMenu
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
               selectedCategories={selectedCategories}
               toggleCategory={toggleCategory}
             />
-            
-            {/* Theme Toggle - Sin efectos hover */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleTheme}
-              className="text-black dark:text-white flex-shrink-0 rounded-none ml-auto hover:bg-transparent hover:shadow-none hover:scale-100 hover:opacity-100"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
-            </Button>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="relative w-full bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-gray-950 dark:to-black md:bg-gradient-to-b md:from-white md:via-gray-100 md:to-gray-200 md:dark:from-gray-900 md:dark:via-black md:dark:to-black">
-        <div className="container py-6 sm:py-8 md:py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+        <div className="container py-4 sm:py-5 md:py-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-center">
             
             {/* Texto Hero */}
-            <div className="text-center md:text-left space-y-4 sm:space-y-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white leading-tight">
+            <div className="text-center md:text-left space-y-3 sm:space-y-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight">
                 Accesorios de Calidad<br className="sm:hidden" /> para tu Tienda
               </h2>
               <div className="space-y-1">
-                <p className="text-base sm:text-lg text-black dark:text-white max-w-xl mx-auto md:mx-0">
+                <p className="text-sm sm:text-base text-black dark:text-white max-w-lg mx-auto md:mx-0">
                   Cables y auriculares de la marca <span className="font-semibold text-black dark:text-black bg-yellow-200 dark:bg-yellow-600 px-1">HOCO</span>.
                 </p>
-                <p className="text-base sm:text-lg text-black dark:text-white max-w-xl mx-auto md:mx-0">
+                <p className="text-sm sm:text-base text-black dark:text-white max-w-lg mx-auto md:mx-0">
                   Envíos a todo Mar del Plata y el país.
                 </p>
               </div>
@@ -143,12 +127,14 @@ export default function Home() {
             </div>
 
             {/* Imagen Hero */}
-            <div className="relative max-w-md mx-auto md:max-w-lg">
-              <div className="relative overflow-hidden shadow-2xl">
+            <div className="relative max-w-[280px] sm:max-w-xs mx-auto md:max-w-sm">
+              <div className="relative overflow-hidden shadow-2xl aspect-[1080/1278]">
                 <img 
                   src="/escaparate.webp" 
                   alt="Accesorios para celular HOCO - Mar del Plata" 
-                  className="w-full h-auto object-cover"
+                  width={1080}
+                  height={1278}
+                  className="w-full h-full object-cover"
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"

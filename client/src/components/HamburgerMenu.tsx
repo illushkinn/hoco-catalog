@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X, Search, Sun, Moon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { CATEGORIES, PRODUCTS_DATA } from "@/const";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface HamburgerMenuProps {
   searchTerm: string;
@@ -19,6 +21,7 @@ export default function HamburgerMenu({
   toggleCategory,
 }: HamburgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   // Bloquear scroll del body cuando el menú está abierto
   useEffect(() => {
@@ -39,8 +42,8 @@ export default function HamburgerMenu({
       {/* Hamburger Button - Sin hover */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2"
-        aria-label="Menu"
+        className="p-1.5"
+        aria-label="Menú"
       >
         <Menu className="w-6 h-6 text-foreground" />
       </button>
@@ -94,6 +97,29 @@ export default function HamburgerMenu({
               {/* Indicador de scroll superior - solo mobile */}
               <div className="md:hidden mb-4 flex justify-center">
                 <div className="w-12 h-1 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+              </div>
+
+              {/* Tema claro / oscuro */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold mb-3 text-black dark:text-white">Apariencia</h3>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={toggleTheme}
+                  className="w-full justify-start gap-3 rounded-none border-2 font-medium text-black dark:text-white"
+                >
+                  {theme === "dark" ? (
+                    <>
+                      <Sun className="w-5 h-5" />
+                      Modo claro
+                    </>
+                  ) : (
+                    <>
+                      <Moon className="w-5 h-5" />
+                      Modo oscuro
+                    </>
+                  )}
+                </Button>
               </div>
 
               {/* Search */}
