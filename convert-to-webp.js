@@ -2,8 +2,8 @@ import sharp from 'sharp';
 import { readdir, mkdir } from 'fs/promises';
 import { join, parse } from 'path';
 
-const INPUT_DIR = './client/public/imagenes_hoco_productos';
-const OUTPUT_DIR = './client/public/imagenes_hoco_productos_webp';
+const INPUT_DIR = './client/public/Fundas Neopren';
+const OUTPUT_DIR = './client/public/Fundas Neopren_webp';
 const QUALITY = 85; // Calidad WebP (80-90 recomendado)
 
 async function convertToWebP() {

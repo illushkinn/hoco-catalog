@@ -9,7 +9,10 @@ const IMG = (name: string) => {
   const webpName = name.replace(/\.(jpg|jpeg|png)$/i, '.webp');
   return `/imagenes_hoco_productos/${webpName}?v=${CACHE_VERSION}&t=${BUILD_TIMESTAMP}`;
 };
-const IMG_FUNDAS = (name: string) => `/Fundas Neopren/${name}?v=${CACHE_VERSION}&t=${BUILD_TIMESTAMP}`;
+const IMG_FUNDAS = (name: string) => {
+  const webpName = name.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+  return `/Fundas Neopren/${webpName}?v=${CACHE_VERSION}&t=${BUILD_TIMESTAMP}`;
+};
 const VIDEO_VT = (name: string) => `/VT_45_kg_anti_espia/${name}?v=${CACHE_VERSION}&t=${BUILD_TIMESTAMP}`;
 
 // Tipos de productos
