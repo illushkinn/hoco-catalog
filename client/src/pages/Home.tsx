@@ -306,9 +306,7 @@ export default function Home() {
               </h3>
               <div className="space-y-2 text-sm text-black dark:text-white">
                 <p>Efectivo</p>
-                <p>Transferencia Bancaria</p>
                 <p>Mercado Pago</p>
-                <p>Tarjetas de Crédito/Débito</p>
               </div>
             </div>
 
