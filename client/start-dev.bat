@@ -4,7 +4,7 @@ echo   Iniciando servidor de desarrollo
 echo ========================================
 echo.
 echo Archivos multimedia configurados:
-echo   - /escaparate.png
+echo   - /escaparate.webp
 echo   - /VT_45_kg_anti_espia/vt45(1).mp4
 echo   - /VT_45_kg_anti_espia/vt45(2).mp4
 echo.

@@ -28,3 +28,29 @@ client/.project-config.json
 
 # Vercel
 .vercel/
+
+# Vite cache
+.vite/
+client/.vite/
+
+# TypeScript build info
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Temporary WebP conversion folders
+imagenes_hoco_productos_webp/
+fundas_neopren_webp/
+*_webp/
+
+# Image conversion scripts (local only)
+convert-to-webp.js
+convert-hero.js
+
+# pnpm debug logs
+pnpm-debug.log*
+
+# patches/ ← dejar comentado, evaluar si tiene contenido real
+
+# Coverage and test outputs
+coverage/
+*.lcov
