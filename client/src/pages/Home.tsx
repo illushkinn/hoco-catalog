@@ -97,7 +97,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative w-full bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-gray-950 dark:to-black md:bg-gradient-to-b md:from-white md:via-gray-100 md:to-gray-200 md:dark:from-gray-900 md:dark:via-black md:dark:to-black">
+      <section className="relative w-full pb-[25vh] bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-gray-950 dark:to-black md:bg-gradient-to-b md:from-white md:via-gray-100 md:to-gray-200 md:dark:from-gray-900 md:dark:via-black md:dark:to-black">
         <div className="container py-4 sm:py-5 md:py-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-center">
             
@@ -238,17 +238,21 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white dark:bg-black mt-8 sm:mt-12">
+      <footer className="relative bg-white dark:bg-black mt-8 sm:mt-12 border-t border-gray-200/90 dark:border-gray-800/90 shadow-[0_-6px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_-6px_24px_rgba(0,0,0,0.45)]">
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-300/60 to-transparent dark:via-gray-600/50"
+          aria-hidden
+        />
         <div className="container py-6 sm:py-8 pr-20 sm:pr-24">
           {/* Trust Badges y Legal Info */}
-          <div className="mb-8 pb-6">
+          <div className="mb-8 pb-6 flex justify-center">
             <TrustBadges />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-center">
             
             {/* Contacto */}
-            <div className="text-left">
+            <div>
               <h3 className="font-semibold text-base sm:text-lg mb-3 text-black dark:text-white">
                 Contacto
               </h3>
@@ -263,7 +267,7 @@ export default function Home() {
             </div>
 
             {/* Métodos de Pago */}
-            <div className="text-left">
+            <div>
               <h3 className="font-semibold text-base sm:text-lg mb-3 text-black dark:text-white">
                 Métodos de Pago
               </h3>
@@ -274,7 +278,7 @@ export default function Home() {
             </div>
 
             {/* Entrega */}
-            <div className="text-left">
+            <div>
               <h3 className="font-semibold text-base sm:text-lg mb-3 text-black dark:text-white">
                 Opciones de Entrega
               </h3>
@@ -288,7 +292,7 @@ export default function Home() {
           </div>
 
           {/* Copyright */}
-          <div className="mt-6 pt-4 text-left">
+          <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-900 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
             <p className="text-xs text-gray-600 dark:text-white">
               © 2026 Cargadores Hoco EAC - Mar del Plata, Argentina
             </p>

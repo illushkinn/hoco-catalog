@@ -42,7 +42,7 @@ export default function ProductCard({
         name,
         price_ars,
         image: allImages[0] || "",
-        thumbnail: isVideo ? "/VT_45_kg_anti_espia/VT-45KG.jpg" : undefined,
+        thumbnail: isVideo ? "/VT_45_kg_anti_espia/VT-45KG.webp" : undefined,
       });
     }
   };
