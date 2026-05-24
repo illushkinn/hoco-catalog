@@ -1,4 +1,6 @@
 @echo off
+setlocal enabledelayedexpansion
+
 echo ========================================
 echo PROCESADOR DE IMAGENES - HOCO CATALOG
 echo ========================================
@@ -15,19 +17,22 @@ pause
 echo.
 echo [1/3] Instalando dependencias...
 echo.
-call pnpm install @imgly/background-removal-node sharp
+
+REM Intentar con npm directamente usando cmd
+cmd /c "npm install @imgly/background-removal-node sharp"
 
 if errorlevel 1 (
     echo.
     echo ERROR: No se pudieron instalar las dependencias
-    echo Intentando con npm...
-    call npm install @imgly/background-removal-node sharp
+    echo Verifica que Node.js este instalado correctamente
+    pause
+    exit /b 1
 )
 
 echo.
 echo [2/3] Procesando imagenes...
 echo.
-node process-images.js
+cmd /c "node process-images.js"
 
 echo.
 echo [3/3] Proceso completado!
