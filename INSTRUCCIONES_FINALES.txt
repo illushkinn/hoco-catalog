@@ -1,0 +1,126 @@
+================================================================================
+  INSTRUCCIONES FINALES - HOCO CATALOG
+================================================================================
+
+PROBLEMA ACTUAL:
+----------------
+Hay un proceso de Vercel CLI bloqueando todos los comandos.
+Necesitas cerrarlo manualmente antes de continuar.
+
+
+PASO 1: CERRAR PROCESO DE VERCEL
+---------------------------------
+Opcion A: Busca la ventana de terminal donde esta corriendo Vercel
+          Presiona Ctrl+C varias veces
+          O cierra la ventana completamente
+
+Opcion B: Abre el Administrador de Tareas (Ctrl+Shift+Esc)
+          Busca procesos "Node.js" o "Vercel"
+          Click derecho → Finalizar tarea
+
+
+PASO 2: EJECUTAR EL SCRIPT AUTOMATICO
+--------------------------------------
+1. Abre el Explorador de Archivos
+2. Navega a: C:\Users\Usuario\Desktop\Hoco\web\proyecto
+3. Haz DOBLE CLICK en: EJECUTAR_TODO.bat
+4. Espera a que termine (puede tomar 1-2 minutos)
+
+
+PASO 3 (ALTERNATIVO): EJECUTAR MANUALMENTE
+-------------------------------------------
+Si el script falla, abre una NUEVA terminal CMD y ejecuta:
+
+cd C:\Users\Usuario\Desktop\Hoco\web\proyecto
+
+taskkill /F /IM node.exe
+
+pnpm install
+
+cd client
+npm run build
+cd ..
+
+git add -A
+git commit -m "Add: Vercel Analytics + Speed Insights + Dark mode negro puro"
+
+
+PASO 4: DEPLOY EN VERCEL
+-------------------------
+1. Ve a: https://vercel.com/dashboard
+2. Busca el proyecto: hococatalog
+3. Click en "Deployments"
+4. Click en "Redeploy" en el ultimo deployment
+5. Espera a que termine (1-2 minutos)
+
+
+================================================================================
+  CAMBIOS QUE SE VAN A APLICAR
+================================================================================
+
+✓ Vercel Analytics instalado y configurado
+✓ Vercel Speed Insights instalado y configurado
+✓ Dark mode con fondo negro puro (#000000) desde la seccion de busqueda
+✓ Footer con fondo negro puro
+✓ Footer alineado a la izquierda
+✓ Boton "Ver Catalogo" compacto en mobile
+✓ Texto simplificado: "Hoco Original"
+✓ Boton de arrepentimiento eliminado
+
+
+================================================================================
+  ARCHIVOS MODIFICADOS
+================================================================================
+
+1. package.json
+   - Agregado: @vercel/analytics
+   - Agregado: @vercel/speed-insights
+
+2. client/src/main.tsx
+   - Importado Analytics y SpeedInsights
+   - Componentes agregados al render
+
+3. client/src/pages/Home.tsx
+   - Dark mode: dark:bg-black en div principal, main y footer
+
+4. client/src/components/TrustBadges.tsx
+   - Texto simplificado
+   - Alineado a la izquierda
+
+
+================================================================================
+  VERIFICACION POST-DEPLOY
+================================================================================
+
+Despues del deploy, verifica:
+
+1. Dark Mode:
+   - Activa dark mode (boton sol/luna)
+   - El fondo debe ser negro puro desde la lupa de busqueda hacia abajo
+   
+2. Analytics:
+   - Ve a Vercel Dashboard → Analytics
+   - Deberia aparecer el proyecto con datos
+
+3. Speed Insights:
+   - Ve a Vercel Dashboard → Speed Insights
+   - Deberia aparecer el proyecto con metricas
+
+4. Footer:
+   - Todo el texto alineado a la izquierda
+   - No tapado por botones flotantes
+
+
+================================================================================
+  SOPORTE
+================================================================================
+
+Si algo falla:
+1. Lee el mensaje de error completo
+2. Verifica que cerraste el proceso de Vercel
+3. Intenta ejecutar los comandos manualmente uno por uno
+4. Si el build falla, verifica que npm y pnpm esten instalados
+
+
+FIN DE INSTRUCCIONES
+================================================================================
