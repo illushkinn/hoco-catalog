@@ -131,16 +131,7 @@ export default function Home() {
                   Envíos a todo Mar del Plata y el país.
                 </p>
               </div>
-              <div className="flex justify-center md:justify-start">
-                <a 
-                  href="#productos" 
-                  className="inline-flex items-center justify-center px-6 py-3 bg-amber-600 text-black font-semibold transition-colors shadow-md w-auto"
-                  style={{ borderRadius: '0.1em' }}
-                >
-                  Ver Catálogo
-                </a>
-              </div>
-              <div className="flex flex-wrap gap-4 justify-center md:justify-start text-sm text-black dark:text-white pt-2">
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start text-sm text-black dark:text-white">
                 <div className="flex items-center gap-2">
                   <span className="text-amber-600 text-xl">✓</span>
                   <span>Entrega Rápida</span>
