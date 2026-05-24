@@ -146,7 +146,7 @@ export default function Home() {
             <div className="relative max-w-md mx-auto md:max-w-lg">
               <div className="relative overflow-hidden shadow-2xl">
                 <img 
-                  src="/escaparate.png" 
+                  src="/escaparate.webp" 
                   alt="Accesorios para celular HOCO - Mar del Plata" 
                   className="w-full h-auto object-cover"
                   loading="eager"
