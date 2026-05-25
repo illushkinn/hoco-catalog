@@ -106,16 +106,16 @@ export default function HamburgerMenu({
                   variant="outline"
                   size="sm"
                   onClick={toggleTheme}
-                  className="w-full justify-start gap-3 border-2 font-medium text-black dark:text-white"
+                  className="w-auto inline-flex items-center gap-2 px-3 py-2 text-sm rounded-[0.77em] border-2 font-medium text-black dark:text-white"
                 >
                   {theme === "dark" ? (
                     <>
-                      <Sun className="w-5 h-5" />
+                      <Sun className="w-4 h-4 shrink-0" />
                       Modo claro
                     </>
                   ) : (
                     <>
-                      <Moon className="w-5 h-5" />
+                      <Moon className="w-4 h-4 shrink-0" />
                       Modo oscuro
                     </>
                   )}
