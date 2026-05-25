@@ -98,13 +98,15 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative w-full pb-[25vh] bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-gray-950 dark:to-black md:bg-gradient-to-b md:from-white md:via-gray-100 md:to-gray-200 md:dark:from-gray-900 md:dark:via-black md:dark:to-black">
-        <div className="container py-4 sm:py-5 md:py-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-center">
+        <div className="container pt-0 pb-4 sm:pb-5 md:pb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-start">
             
             {/* Texto Hero */}
             <div className="text-center md:text-left space-y-3 sm:space-y-4">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight">
-                Accesorios de Calidad<br className="sm:hidden" /> para tu Tienda
+                Accesorios de calidad
+                <br />
+                para tu tienda
               </h2>
               <div className="space-y-1">
                 <p className="text-sm sm:text-base text-black dark:text-white max-w-lg mx-auto md:mx-0">
@@ -245,7 +247,7 @@ export default function Home() {
         />
         <div className="container py-6 sm:py-8 pr-20 sm:pr-24">
           {/* Trust Badges y Legal Info */}
-          <div className="mb-8 pb-6 flex justify-center">
+          <div className="mb-8 pb-6 w-full text-left">
             <TrustBadges />
           </div>
 

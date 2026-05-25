@@ -6,7 +6,7 @@ import { Phone } from "lucide-react";
  */
 export default function TrustBadges() {
   return (
-    <div className="flex flex-wrap items-center justify-start gap-x-3 gap-y-2 text-left max-w-2xl">
+    <div className="flex w-full flex-wrap items-start justify-start gap-x-3 gap-y-2 text-left">
       {/* Información fiscal y comercial condensada */}
       <div className="w-full space-y-1">
         <p className="text-sm text-black dark:text-white font-medium">
