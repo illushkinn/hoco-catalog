@@ -102,7 +102,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-start">
             
             {/* Texto Hero */}
-            <div className="text-center md:text-left space-y-3 sm:space-y-4">
+            <div className="text-center md:text-left space-y-3 sm:space-y-4 md:self-center py-6 sm:py-8 md:py-0">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight">
                 Accesorios de calidad
                 <br />
@@ -129,8 +129,8 @@ export default function Home() {
             </div>
 
             {/* Imagen Hero */}
-            <div className="relative max-w-[280px] sm:max-w-xs mx-auto md:max-w-sm">
-              <div className="relative overflow-hidden shadow-2xl aspect-[1080/1278]">
+            <div className="relative max-w-[280px] sm:max-w-xs mx-auto md:max-w-sm md:self-start">
+              <div className="relative overflow-hidden rounded-lg shadow-2xl aspect-[1080/1278]">
                 <img 
                   src="/escaparate.webp" 
                   alt="Accesorios para celular HOCO - Mar del Plata" 
