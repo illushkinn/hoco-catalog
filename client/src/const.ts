@@ -1,5 +1,5 @@
 // Catálogo completo de productos HOCO
-// Precios actualizados según lista vigente (+$1.750 por ítem)
+// Precios: lista vigente ajustada (−$2.000 por ítem, mayo 2026)
 
 // Cache busting version - increment when images change
 const CACHE_VERSION = "v3";
@@ -14,6 +14,10 @@ const IMG_FUNDAS = (name: string) => {
   return `/Fundas Neopren/${webpName}?v=${CACHE_VERSION}&t=${BUILD_TIMESTAMP}`;
 };
 const VIDEO_VT = (name: string) => `/VT_45_kg_anti_espia/${name}?v=${CACHE_VERSION}&t=${BUILD_TIMESTAMP}`;
+
+/** Packaging opcional en bolsa de cristal (upsell Fundas Neopren) */
+export const PACKAGING_CRYSTAL_ARS = 4000;
+export const PACKAGING_CRYSTAL_IMAGE = `/Fundas Neopren/packaging-bolsa-cristal.webp?v=${CACHE_VERSION}&t=${BUILD_TIMESTAMP}`;
 
 // Tipos de productos
 interface Product {
@@ -98,14 +102,14 @@ export const PRODUCTS_DATA: Record<ProductCategory, Product[]> = {
     { id: "notebook-13-sub", name: "Notebook 13\" Sublimada", price_ars: 19500, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.20 (5).jpeg"), description: "Fabricantes - Por encargo y cantidad mínima", compatibility: ["MacBook Air 13\"", "Laptops 13\""] },
     { id: "notebook-14-mono", name: "Notebook 14\" Monocolor", price_ars: 20000, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.20 (6).jpeg"), description: "Fabricantes - Stock disponible sin mínimo", compatibility: ["Laptops 14\""] },
     { id: "notebook-14-sub", name: "Notebook 14\" Sublimada", price_ars: 20500, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.20 (7).jpeg"), description: "Fabricantes - Por encargo y cantidad mínima", compatibility: ["Laptops 14\""] },
-    { id: "notebook-14-reptil", name: "Notebook 14\" Reptil", price_ars: 25500, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.20 (8).jpeg"), description: "Fabricantes - Por encargo y cantidad mínima", compatibility: ["Laptops 14\""] },
-    { id: "notebook-156-mono", name: "Notebook 15,6\" Monocolor", price_ars: 20500, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.21 (10).jpeg"), description: "Fabricantes - Stock disponible sin mínimo", compatibility: ["MacBook Pro 15\"", "Laptops 15,6\""] },
+    { id: "notebook-14-reptil", name: "Notebook 14\" Sublimada", price_ars: 25500, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.20 (8).jpeg"), description: "Fabricantes - Por encargo y cantidad mínima", compatibility: ["Laptops 14\""] },
+    { id: "notebook-156-mono", name: "Notebook 15,6\" Sublimada", price_ars: 20500, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.21 (10).jpeg"), description: "Fabricantes - Stock disponible sin mínimo", compatibility: ["MacBook Pro 15\"", "Laptops 15,6\""] },
     { id: "notebook-156-sub", name: "Notebook 15,6\" Sublimada", price_ars: 21000, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.21 (11).jpeg"), description: "Fabricantes - Por encargo y cantidad mínima", compatibility: ["MacBook Pro 15\"", "Laptops 15,6\""] },
     { id: "notebook-156-reptil", name: "Notebook 15,6\" Reptil", price_ars: 26500, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.21 (2).jpeg"), description: "Fabricantes - Por encargo y cantidad mínima", compatibility: ["MacBook Pro 15\"", "Laptops 15,6\""] },
     { id: "notebook-17-mono", name: "Notebook 17\" Monocolor", price_ars: 21500, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.21 (9).jpeg"), description: "Fabricantes - Por encargo", compatibility: ["Laptops 17\""] },
     { id: "notebook-17-sub", name: "Notebook 17\" Sublimada", price_ars: 22000, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.22 (12).jpeg"), description: "Fabricantes - Por encargo y cantidad mínima", compatibility: ["Laptops 17\""] },
     { id: "case-auto", name: "Case Auto", price_ars: 12500, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.22 (13).jpeg"), description: "Funda organizadora para auto - Monocolor", compatibility: ["Universal"] },
-    { id: "joysticks", name: "Joysticks", price_ars: 13000, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.22 (14).jpeg"), description: "Funda protectora para joysticks - Monocolor", compatibility: ["PS4", "PS5", "Xbox"] },
+    { id: "joysticks", name: "Reptil", price_ars: 13000, status: "Disponible", image: IMG_FUNDAS("WhatsApp Image 2026-05-19 at 15.19.22 (14).jpeg"), description: "Funda protectora para joysticks - Monocolor", compatibility: ["PS4", "PS5", "Xbox"] },
   ],
 };
 

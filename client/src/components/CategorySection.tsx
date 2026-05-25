@@ -1,4 +1,5 @@
 import ProductCard from "./ProductCard";
+import FundasPackagingBanner from "./FundasPackagingBanner";
 
 interface Product {
   id: string;
@@ -25,6 +26,8 @@ export default function CategorySection({ category, products }: CategorySectionP
           {category}
         </h2>
       </div>
+
+      {category === "Fundas Neopren" && <FundasPackagingBanner />}
       
       {/* Borderless Editorial Grid - Estilo Zara/ASOS */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

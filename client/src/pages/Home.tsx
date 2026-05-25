@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { useHeroGsap } from "@/hooks/useHeroGsap";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { X } from "lucide-react";
@@ -21,6 +22,7 @@ import { PRODUCTS_DATA, CATEGORIES } from "@/const";
  * - Integración con WhatsApp
  */
 export default function Home() {
+  const { heroTextRef, heroImageRef } = useHeroGsap();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
     new Set() // Vacío inicialmente - sin categorías seleccionadas
@@ -101,7 +103,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-start">
             
             {/* Texto Hero */}
-            <div className="text-center md:text-left space-y-3 sm:space-y-4 md:self-center py-6 sm:py-8 md:py-0">
+            <div
+              ref={heroTextRef}
+              className="text-center md:text-left space-y-3 sm:space-y-4 md:self-center py-6 sm:py-8 md:py-0"
+            >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight">
                 Accesorios de calidad
                 <br />
@@ -128,7 +133,10 @@ export default function Home() {
             </div>
 
             {/* Imagen Hero */}
-            <div className="relative max-w-[280px] sm:max-w-xs mx-auto md:max-w-sm mt-4 sm:mt-6 md:self-center md:mt-10">
+            <div
+              ref={heroImageRef}
+              className="relative max-w-[280px] sm:max-w-xs mx-auto md:max-w-sm mt-4 sm:mt-6 md:self-center md:mt-10"
+            >
               <div className="relative overflow-hidden rounded-[0.77em] shadow-2xl aspect-[1080/1278]">
                 <img 
                   src="/escaparate.webp" 
@@ -279,7 +287,6 @@ export default function Home() {
                 Opciones de Entrega
               </h3>
               <div className="space-y-2 text-sm text-black dark:text-white">
-                <p>Retiro en Local</p>
                 <p>Envío a Domicilio (MDP)</p>
                 <p>Envío a Todo el País</p>
                 <p className="text-xs mt-3 text-gray-600 dark:text-white">Consultar costos de envío</p>
