@@ -77,7 +77,7 @@ export default function HamburgerMenu({
                 <h2 className="text-2xl font-bold text-black dark:text-white">Menú</h2>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 transition-colors rounded-none"
+                  className="p-2 transition-colors"
                   aria-label="Cerrar"
                 >
                   <X className="w-6 h-6 text-black dark:text-white" />
@@ -87,7 +87,7 @@ export default function HamburgerMenu({
 
             {/* Contenido Scrolleable con scrollbar estilizado */}
             <div 
-              className="flex-1 overflow-y-scroll px-6 py-6 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-gray-700 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:hover:bg-gray-400 dark:[&::-webkit-scrollbar-thumb]:hover:bg-gray-600"
+              className="flex-1 overflow-y-scroll px-6 py-6 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-gray-700 [&::-webkit-scrollbar-thumb]:rounded-[0.77em] [&::-webkit-scrollbar-thumb]:hover:bg-gray-400 dark:[&::-webkit-scrollbar-thumb]:hover:bg-gray-600"
               style={{
                 overscrollBehavior: 'contain',
                 WebkitOverflowScrolling: 'touch',
@@ -96,7 +96,7 @@ export default function HamburgerMenu({
             >
               {/* Indicador de scroll superior - solo mobile */}
               <div className="md:hidden mb-4 flex justify-center">
-                <div className="w-12 h-1 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+                <div className="w-12 h-1 bg-gray-300 dark:bg-gray-700 rounded-[0.77em]"></div>
               </div>
 
               {/* Tema claro / oscuro */}
@@ -106,7 +106,7 @@ export default function HamburgerMenu({
                   variant="outline"
                   size="sm"
                   onClick={toggleTheme}
-                  className="w-full justify-start gap-3 rounded-none border-2 font-medium text-black dark:text-white"
+                  className="w-full justify-start gap-3 border-2 font-medium text-black dark:text-white"
                 >
                   {theme === "dark" ? (
                     <>
@@ -130,7 +130,7 @@ export default function HamburgerMenu({
                     placeholder="Buscar productos..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-12 pr-4 py-5 bg-gray-100 dark:bg-gray-800 border-2 border-transparent focus:bg-white dark:focus:bg-black focus:ring-0 focus:border-accent transition-all text-base font-medium text-black dark:text-white rounded-none"
+                    className="pl-12 pr-4 py-5 bg-gray-100 dark:bg-gray-800 border-2 border-transparent focus:bg-white dark:focus:bg-black focus:ring-0 focus:border-accent transition-all text-base font-medium text-black dark:text-white"
                   />
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function HamburgerMenu({
                         onClick={() => {
                           toggleCategory(category);
                         }}
-                        className={`flex items-center justify-between px-6 py-5 transition-all font-medium text-left rounded-none touch-manipulation ${
+                        className={`flex items-center justify-between px-6 py-5 transition-all font-medium text-left rounded-[0.77em] touch-manipulation ${
                           isSelected
                             ? "bg-black dark:bg-white text-white dark:text-black"
                             : "bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
@@ -158,7 +158,7 @@ export default function HamburgerMenu({
                         <span className="text-base font-semibold">{category}</span>
                         <Badge 
                           variant={isSelected ? "secondary" : "outline"} 
-                          className={`text-sm font-bold rounded-none px-3 py-1 ${
+                          className={`text-sm font-bold px-3 py-1 ${
                             isSelected 
                               ? "bg-white dark:bg-black text-black dark:text-white" 
                               : ""
@@ -188,7 +188,7 @@ export default function HamburgerMenu({
             >
               <button
                 onClick={() => setIsOpen(false)}
-                className="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-semibold transition-colors rounded-none text-base"
+                className="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-semibold transition-colors rounded-[0.77em] text-base"
               >
                 Ver Productos
               </button>

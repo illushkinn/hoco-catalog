@@ -70,7 +70,7 @@ export default function FloatingCart() {
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm">
           <div 
-            className="bg-white/55 dark:bg-zinc-900/55 backdrop-blur-xl border border-white/30 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-96 max-h-[80vh] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-gray-700 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:hover:bg-gray-400 dark:[&::-webkit-scrollbar-thumb]:hover:bg-gray-600"
+            className="bg-white/55 dark:bg-zinc-900/55 backdrop-blur-xl border border-white/30 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] w-full sm:w-96 max-h-[80vh] overflow-y-auto rounded-[0.77em] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-gray-700 [&::-webkit-scrollbar-thumb]:rounded-[0.77em] [&::-webkit-scrollbar-thumb]:hover:bg-gray-400 dark:[&::-webkit-scrollbar-thumb]:hover:bg-gray-600"
             style={{
               WebkitBackdropFilter: 'blur(16px)',
               boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
@@ -103,7 +103,7 @@ export default function FloatingCart() {
                   {items.map((item) => (
                     <div
                       key={item.id}
-                      className="flex gap-3 p-3 bg-gray-100 dark:bg-gray-800"
+                      className="flex gap-3 p-3 bg-gray-100 dark:bg-gray-800 rounded-[0.77em]"
                     >
                       <img
                         src={item.thumbnail || item.image}
@@ -125,7 +125,7 @@ export default function FloatingCart() {
                         >
                           <Trash2 className="w-4 h-4 text-destructive" />
                         </button>
-                        <div className="flex items-center gap-1 bg-black dark:bg-white">
+                        <div className="flex items-center gap-1 bg-black dark:bg-white rounded-[0.77em]">
                           <button
                             onClick={() =>
                               updateQuantity(item.id, item.quantity - 1)
@@ -163,14 +163,14 @@ export default function FloatingCart() {
                   </div>
                   <Button
                     onClick={handleWhatsAppOrder}
-                    className="w-full bg-green-600 text-white font-semibold rounded-none"
+                    className="w-full bg-green-600 text-white font-semibold"
                   >
                     Enviar por WhatsApp
                   </Button>
                   <Button
                     variant="outline"
                     onClick={() => clearCart()}
-                    className="w-full text-black dark:text-white border-black dark:border-white rounded-none"
+                    className="w-full text-black dark:text-white border-black dark:border-white"
                   >
                     Limpiar carrito
                   </Button>

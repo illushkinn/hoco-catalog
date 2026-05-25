@@ -76,7 +76,7 @@ export default function ProductCard({
         {/* Contenedor de imagen/video - aspect-ratio 3/4 portrait */}
         {allImages.length > 0 && (
           <div 
-            className="relative w-full bg-white dark:bg-black overflow-hidden" 
+            className="relative w-full bg-white dark:bg-black overflow-hidden rounded-[0.77em]" 
             style={{ aspectRatio: '3/4' }}
             onClick={openModal}
           >
@@ -124,7 +124,7 @@ export default function ProductCard({
             
             {/* Indicador de múltiples imágenes */}
             {hasMultipleImages && !isVideo && (
-              <div className="absolute top-2 right-2 bg-black/70 text-white px-2 py-1 text-xs rounded-full">
+              <div className="absolute top-2 right-2 bg-black/70 text-white px-2 py-1 text-xs rounded-[0.77em]">
                 {currentImageIndex + 1}/{allImages.length}
               </div>
             )}
@@ -137,7 +137,7 @@ export default function ProductCard({
                     e.stopPropagation();
                     prevImage();
                   }}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-[0.77em] opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
@@ -146,7 +146,7 @@ export default function ProductCard({
                     e.stopPropagation();
                     nextImage();
                   }}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-[0.77em] opacity-0 group-hover:opacity-100 transition-opacity hidden md:block"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -158,7 +158,7 @@ export default function ProductCard({
               <Button
                 onClick={handleAddToCart}
                 disabled={!isAvailable}
-                className="w-full gap-2 font-semibold text-sm rounded-none"
+                className="w-full gap-2 font-semibold text-sm"
                 variant={isAvailable ? "default" : "outline"}
               >
                 <ShoppingCart className="w-4 h-4" />
@@ -208,7 +208,7 @@ export default function ProductCard({
         >
           <button
             onClick={() => setIsModalOpen(false)}
-            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full transition-colors z-10"
+            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-[0.77em] transition-colors z-10"
           >
             <X className="w-6 h-6" />
           </button>
@@ -233,7 +233,7 @@ export default function ProductCard({
                     e.stopPropagation();
                     prevModalImage();
                   }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-[0.77em] transition-colors"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
@@ -242,11 +242,11 @@ export default function ProductCard({
                     e.stopPropagation();
                     nextModalImage();
                   }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-colors"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-[0.77em] transition-colors"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-[0.77em] text-sm">
                   {modalImageIndex + 1} / {allImages.length}
                 </div>
               </>
