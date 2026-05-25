@@ -7,7 +7,6 @@ import FloatingCart from "@/components/FloatingCart";
 import FloatingActions from "@/components/FloatingActions";
 import HamburgerMenu from "@/components/HamburgerMenu";
 import { PRODUCTS_DATA, CATEGORIES } from "@/const";
-import TrustBadges from "@/components/TrustBadges";
 
 /**
  * Página principal del catálogo de accesorios para celulares
@@ -246,11 +245,6 @@ export default function Home() {
           aria-hidden
         />
         <div className="container py-6 sm:py-8 pr-20 sm:pr-24">
-          {/* Trust Badges y Legal Info */}
-          <div className="mb-8 pb-6 w-full text-left">
-            <TrustBadges />
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-center">
             
             {/* Contacto */}
@@ -293,13 +287,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Copyright */}
+          {/* Copyright e información legal */}
           <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-900 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
-            <p className="text-xs text-gray-600 dark:text-white">
+            <p className="text-xs text-gray-600 dark:text-gray-400">
               © 2026 Cargadores Hoco EAC - Mar del Plata, Argentina
             </p>
-            <p className="text-xs text-gray-600 dark:text-white mt-1">
-              Proveedor mayorista de accesorios tech
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+              CUIT: 20-19025451-9 · Hoco Original · Certificación EAC · Envíos a todo el país
+            </p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+              Defensa del Consumidor · 0800-666-1518
             </p>
           </div>
         </div>
