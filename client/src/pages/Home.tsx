@@ -129,8 +129,8 @@ export default function Home() {
             </div>
 
             {/* Imagen Hero */}
-            <div className="relative max-w-[280px] sm:max-w-xs mx-auto md:max-w-sm md:self-start">
-              <div className="relative overflow-hidden rounded-lg shadow-2xl aspect-[1080/1278]">
+            <div className="relative max-w-[280px] sm:max-w-xs mx-auto md:max-w-sm mt-4 sm:mt-6 md:self-center md:mt-10">
+              <div className="relative overflow-hidden rounded-[0.77em] shadow-2xl aspect-[1080/1278]">
                 <img 
                   src="/escaparate.webp" 
                   alt="Accesorios para celular HOCO - Mar del Plata" 
