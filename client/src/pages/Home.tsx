@@ -239,13 +239,13 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="relative bg-white dark:bg-black mt-8 sm:mt-12 border-t border-gray-200/90 dark:border-gray-800/90 shadow-[0_-6px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_-6px_24px_rgba(0,0,0,0.45)]">
+      <footer className="relative bg-white dark:bg-black mt-8 sm:mt-12 border-t border-gray-200/90 dark:border-gray-800/90 shadow-[0_-6px_20px_rgba(0,0,0,0.05)] dark:shadow-[0_-6px_24px_rgba(0,0,0,0.45)] text-left">
         <div
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-300/60 to-transparent dark:via-gray-600/50"
           aria-hidden
         />
         <div className="container py-6 sm:py-8 pr-20 sm:pr-24">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-left">
             
             {/* Contacto */}
             <div>
@@ -288,7 +288,7 @@ export default function Home() {
           </div>
 
           {/* Copyright e información legal */}
-          <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-900 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+          <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-900 text-left shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
             <p className="text-xs text-gray-600 dark:text-gray-400">
               © 2026 Cargadores Hoco EAC - Mar del Plata, Argentina
             </p>
