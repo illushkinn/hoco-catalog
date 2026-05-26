@@ -139,14 +139,6 @@ export default function Home() {
                   <span>Precios Mayoristas</span>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 w-full sm:w-auto pt-1">
-                <Button
-                  asChild
-                  className="w-full sm:w-auto min-h-[48px] bg-orange-700 hover:bg-orange-800 text-white font-semibold text-base shadow-md focus-visible:ring-2 focus-visible:ring-offset-2"
-                >
-                  <a href="#main-content">Ver Catálogo</a>
-                </Button>
-              </div>
             </div>
 
             {/* Imagen Hero — aislada del layout de hermanos (prep. HTML in Canvas / WICG) */}
@@ -167,9 +159,6 @@ export default function Home() {
                     fetchPriority="high"
                     decoding="async"
                   />
-                  <span className="hero-badge" aria-hidden="true">
-                    + 60 productos!
-                  </span>
                 </div>
               </div>
             </div>
@@ -330,7 +319,10 @@ export default function Home() {
               Mar del Plata, Argentina
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-              CUIT: 20-19025451-9 · Hoco Original · Envíos a todo el país
+              CUIT: 20-19025451-9
+            </p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+              Envíos a todo el país
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
               Defensa del Consumidor · 0800-666-1518

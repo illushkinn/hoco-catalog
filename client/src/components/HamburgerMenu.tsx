@@ -41,9 +41,11 @@ export default function HamburgerMenu({
     <>
       {/* Hamburger Button - Sin hover */}
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="p-1.5"
-        aria-label="Menú"
+        className="flex items-center justify-center min-h-[44px] min-w-[44px] p-1.5 focus-visible:ring-2 focus-visible:ring-offset-2"
+        aria-label="Abrir menú de navegación"
+        aria-expanded={isOpen}
       >
         <Menu className="w-6 h-6 text-foreground" />
       </button>
@@ -73,12 +75,13 @@ export default function HamburgerMenu({
                 WebkitBackdropFilter: 'blur(12px)'
               }}
             >
-              <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold text-black dark:text-white">Menú</h2>
+              <div className="flex flex-row items-center justify-between gap-2 min-w-0">
+                <h2 className="text-2xl font-bold text-black dark:text-white min-w-0">Menú</h2>
                 <button
+                  type="button"
                   onClick={() => setIsOpen(false)}
-                  className="p-2 transition-colors"
-                  aria-label="Cerrar"
+                  className="flex items-center justify-center min-h-[44px] min-w-[44px] p-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2"
+                  aria-label="Cerrar menú"
                 >
                   <X className="w-6 h-6 text-black dark:text-white" />
                 </button>
@@ -106,7 +109,7 @@ export default function HamburgerMenu({
                   variant="outline"
                   size="sm"
                   onClick={toggleTheme}
-                  className="w-auto inline-flex items-center gap-2 px-3 py-2 text-sm rounded-[0.77em] border-2 font-medium text-black dark:text-white"
+                  className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-3 py-2 text-base rounded-[0.77em] border-2 font-medium text-black dark:text-white"
                 >
                   {theme === "dark" ? (
                     <>
@@ -148,12 +151,11 @@ export default function HamburgerMenu({
                         onClick={() => {
                           toggleCategory(category);
                         }}
-                        className={`flex items-center justify-between px-6 py-5 transition-all font-medium text-left rounded-[0.77em] touch-manipulation ${
+                        className={`flex flex-row items-center justify-between gap-3 min-h-[48px] px-6 py-5 transition-all font-medium text-left rounded-[0.77em] touch-manipulation focus-visible:ring-2 focus-visible:ring-offset-2 ${
                           isSelected
                             ? "bg-black dark:bg-white text-white dark:text-black"
                             : "bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
                         }`}
-                        style={{ minHeight: '60px' }}
                       >
                         <span className="text-base font-semibold">{category}</span>
                         <Badge 
@@ -187,8 +189,9 @@ export default function HamburgerMenu({
               }}
             >
               <button
+                type="button"
                 onClick={() => setIsOpen(false)}
-                className="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-semibold transition-colors rounded-[0.77em] text-base"
+                className="w-full sm:w-auto min-h-[48px] py-4 px-6 bg-black dark:bg-white text-white dark:text-black font-semibold transition-colors rounded-[0.77em] text-base focus-visible:ring-2 focus-visible:ring-offset-2"
               >
                 Ver Productos
               </button>

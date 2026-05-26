@@ -28,8 +28,8 @@ export default function FloatingActions() {
         href="https://wa.me/5491124063009?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20tus%20productos."
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full w-14 h-14 shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center"
-        title="Contactar por WhatsApp"
+        className="bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full min-h-[48px] min-w-[48px] shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-offset-2"
+        aria-label="Contactar por WhatsApp"
       >
         <svg 
           viewBox="0 0 32 32" 
@@ -44,8 +44,8 @@ export default function FloatingActions() {
       {showScrollTop && (
         <Button
           onClick={scrollToTop}
-          className="bg-primary text-primary-foreground rounded-full p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center animate-in fade-in"
-          title="Volver al inicio"
+          className="bg-primary text-primary-foreground rounded-full min-h-[48px] min-w-[48px] p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center animate-in fade-in"
+          aria-label="Volver al inicio"
         >
           <ArrowUp className="w-6 h-6" />
         </Button>
