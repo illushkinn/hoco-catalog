@@ -111,25 +111,25 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-8 items-start">
             
             {/* Texto Hero */}
-            <div className="hero-fade-in text-left flex flex-col items-start justify-start gap-3 sm:gap-4 md:self-center py-4 sm:py-12 md:py-16 min-w-0">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black dark:text-white leading-tight min-w-0">
-                Accesorios
+            <div className="hero-fade-in text-center md:text-left flex flex-col items-center md:items-start justify-start gap-3 sm:gap-4 md:self-center py-4 sm:py-12 md:py-16 min-w-0">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-black dark:text-white leading-tight min-w-0">
+                Accesorios de calidad
                 <br />
-                de calidad para tu tienda
+                para tu tienda
               </h1>
-              <div className="flex flex-col items-start justify-start gap-1 w-full min-w-0">
-                <p className="text-base sm:text-lg text-black dark:text-white max-w-lg md:mx-0 min-w-0">
+              <div className="flex flex-col items-center md:items-start justify-start gap-1 w-full min-w-0">
+                <p className="text-lg sm:text-xl text-black dark:text-white max-w-lg mx-auto md:mx-0 min-w-0">
                   Cables y auriculares de la marca{" "}
                   <span className="font-semibold text-gray-900 bg-yellow-400 dark:bg-yellow-500 dark:text-gray-950 px-1 rounded-sm">
                     HOCO
                   </span>
                   .
                 </p>
-                <p className="text-base sm:text-lg text-black dark:text-white max-w-lg md:mx-0 min-w-0">
+                <p className="text-lg sm:text-xl text-black dark:text-white max-w-lg mx-auto md:mx-0 min-w-0">
                   Envíos a todo Mar del Plata y el país.
                 </p>
               </div>
-              <div className="flex flex-row flex-wrap items-center justify-start gap-4 text-base text-black dark:text-white min-w-0">
+              <div className="flex flex-row flex-wrap items-center justify-center md:justify-start gap-4 text-base text-black dark:text-white min-w-0">
                 <div className="flex flex-row items-center justify-start gap-2 min-w-0">
                   <span className="text-amber-700 dark:text-amber-500 text-xl" aria-hidden="true">✓</span>
                   <span>Entrega Rápida</span>
@@ -138,6 +138,14 @@ export default function Home() {
                   <span className="text-amber-700 dark:text-amber-500 text-xl" aria-hidden="true">✓</span>
                   <span>Precios Mayoristas</span>
                 </div>
+              </div>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 w-full sm:w-auto pt-1">
+                <Button
+                  asChild
+                  className="w-full sm:w-auto min-h-[48px] bg-orange-700 hover:bg-orange-800 text-white font-semibold text-base shadow-md focus-visible:ring-2 focus-visible:ring-offset-2"
+                >
+                  <a href="#main-content">Ver Catálogo</a>
+                </Button>
               </div>
             </div>
 
@@ -159,6 +167,9 @@ export default function Home() {
                     fetchPriority="high"
                     decoding="async"
                   />
+                  <span className="hero-badge" aria-hidden="true">
+                    + 60 productos!
+                  </span>
                 </div>
               </div>
             </div>
@@ -319,7 +330,10 @@ export default function Home() {
               Mar del Plata, Argentina
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-              CUIT: 20-19025451-9 · Hoco Original · Envíos a todo el país
+              CUIT: 20-19025451-9
+            </p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+              Envíos a todo el país
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
               Defensa del Consumidor · 0800-666-1518
