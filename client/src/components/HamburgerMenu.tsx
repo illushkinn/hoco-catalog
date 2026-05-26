@@ -102,7 +102,7 @@ export default function HamburgerMenu({
                   variant="outline"
                   size="sm"
                   onClick={toggleTheme}
-                  className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-3 py-2 text-base rounded-[0.77em] border-2 font-medium text-black dark:text-white"
+                  className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-3 py-2 text-base rounded-[0.77em] border-2 font-medium text-black dark:text-white dark:border-white"
                 >
                   {theme === "dark" ? (
                     <>
@@ -181,7 +181,7 @@ export default function HamburgerMenu({
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="w-full sm:w-auto min-h-[48px] py-4 px-6 bg-neutral-900 text-white font-semibold transition-colors rounded-[0.77em] text-base focus-visible:ring-2 focus-visible:ring-offset-2"
+                className="w-full sm:w-auto min-h-[48px] py-4 px-6 bg-neutral-900 text-white font-semibold transition-colors rounded-[0.77em] text-base border-2 border-transparent dark:border-white focus-visible:ring-2 focus-visible:ring-offset-2"
               >
                 Ver Productos
               </button>
