@@ -319,10 +319,7 @@ export default function Home() {
               Mar del Plata, Argentina
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-              CUIT: 20-19025451-9
-            </p>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-              Envíos a todo el país
+              CUIT: 20-19025451-9 · Hoco Original · Envíos a todo el país
             </p>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
               Defensa del Consumidor · 0800-666-1518
