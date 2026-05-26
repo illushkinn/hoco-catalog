@@ -100,23 +100,23 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full pb-[25vh] bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-gray-950 dark:to-black md:bg-gradient-to-b md:from-white md:via-gray-100 md:to-gray-200 md:dark:from-gray-900 md:dark:via-black md:dark:to-black">
         <div className="container pt-0 pb-4 sm:pb-5 md:pb-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-8 items-start">
             
             {/* Texto Hero */}
             <div
               ref={heroTextRef}
-              className="text-center md:text-left space-y-3 sm:space-y-4 md:self-center py-6 sm:py-8 md:py-0"
+              className="text-center md:text-left space-y-3 sm:space-y-4 md:self-center py-4 sm:py-12 md:py-16"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white leading-tight">
+              <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-black dark:text-white leading-tight">
                 Accesorios de calidad
                 <br />
                 para tu tienda
               </h2>
               <div className="space-y-1">
-                <p className="text-sm sm:text-base text-black dark:text-white max-w-lg mx-auto md:mx-0">
+                <p className="text-lg sm:text-xl text-black dark:text-white max-w-lg mx-auto md:mx-0">
                   Cables y auriculares de la marca <span className="font-semibold text-black dark:text-black bg-yellow-200 dark:bg-yellow-600 px-1">HOCO</span>.
                 </p>
-                <p className="text-sm sm:text-base text-black dark:text-white max-w-lg mx-auto md:mx-0">
+                <p className="text-lg sm:text-xl text-black dark:text-white max-w-lg mx-auto md:mx-0">
                   Envíos a todo Mar del Plata y el país.
                 </p>
               </div>
@@ -137,13 +137,13 @@ export default function Home() {
               ref={heroImageRef}
               className="relative max-w-[280px] sm:max-w-xs mx-auto md:max-w-sm mt-4 sm:mt-6 md:self-center md:mt-10"
             >
-              <div className="relative overflow-hidden rounded-[0.77em] shadow-2xl aspect-[1080/1278]">
+              <div className="relative overflow-hidden rounded-[0.77em] shadow-2xl aspect-[1080/1278] min-h-[280px] sm:min-h-0">
                 <img 
                   src="/escaparate.webp" 
                   alt="Accesorios para celular HOCO - Mar del Plata" 
                   width={1080}
                   height={1278}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-2xl"
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
