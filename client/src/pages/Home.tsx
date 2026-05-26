@@ -139,14 +139,6 @@ export default function Home() {
                   <span>Precios Mayoristas</span>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-3 w-full sm:w-auto pt-1">
-                <Button
-                  asChild
-                  className="w-full sm:w-auto min-h-[48px] bg-orange-700 hover:bg-orange-800 text-white font-semibold text-base shadow-md focus-visible:ring-2 focus-visible:ring-offset-2"
-                >
-                  <a href="#main-content">Ver Catálogo</a>
-                </Button>
-              </div>
             </div>
 
             {/* Imagen Hero — aislada del layout de hermanos (prep. HTML in Canvas / WICG) */}
