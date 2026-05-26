@@ -113,9 +113,18 @@ export default function Home() {
             {/* Texto Hero */}
             <div className="hero-fade-in text-center md:text-left flex flex-col items-center md:items-start justify-start gap-3 sm:gap-4 md:self-center py-4 sm:py-12 md:py-16 min-w-0">
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-black dark:text-white leading-tight min-w-0">
-                Accesorios de calidad
-                <br />
-                para tu tienda
+                <span className="block md:hidden">
+                  Accesorios
+                  <br />
+                  de calidad
+                  <br />
+                  para tu tienda
+                </span>
+                <span className="hidden md:block">
+                  Accesorios de calidad
+                  <br />
+                  para tu tienda
+                </span>
               </h1>
               <div className="flex flex-col items-center md:items-start justify-start gap-1 w-full min-w-0">
                 <p className="text-lg sm:text-xl text-black dark:text-white max-w-lg mx-auto md:mx-0 min-w-0">
@@ -194,7 +203,7 @@ export default function Home() {
                       variant={isSelected ? "default" : "outline"}
                       className={`cursor-pointer transition-all font-medium text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 ${
                         isSelected
-                          ? "bg-primary text-primary-foreground shadow-md"
+                          ? "bg-neutral-900 text-white shadow-md"
                           : "bg-card text-foreground border-2 border-border"
                       }`}
                       onClick={() => toggleCategory(category)}

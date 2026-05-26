@@ -43,11 +43,11 @@ export default function HamburgerMenu({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center min-h-[44px] min-w-[44px] p-1.5 focus-visible:ring-2 focus-visible:ring-offset-2"
+        className="flex items-center justify-center min-h-[44px] min-w-[44px] p-1.5 bg-neutral-900/80 rounded-full focus-visible:ring-2 focus-visible:ring-offset-2"
         aria-label="Abrir menú de navegación"
         aria-expanded={isOpen}
       >
-        <Menu className="w-6 h-6 text-foreground" />
+        <Menu className="w-6 h-6 text-white" />
       </button>
 
       {/* Sidebar Overlay - Renderizado con Portal fuera del header */}
@@ -61,19 +61,12 @@ export default function HamburgerMenu({
           
           {/* Sidebar - Glassmorphism mejorado - Mitad de pantalla */}
           <div 
-            className="fixed top-0 left-0 h-full w-full sm:w-1/2 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border-r border-white/30 dark:border-white/10 z-[100] shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex flex-col"
-            style={{
-              WebkitBackdropFilter: 'blur(16px)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
-            }}
+            className="fixed top-0 left-0 h-full w-full sm:w-1/2 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-white/10 z-[100] shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Header - Sticky con glassmorphism mejorado */}
+            {/* Header - Sticky */}
             <div 
-              className="flex-shrink-0 p-6 border-b border-white/20 dark:border-white/10 sticky top-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_24px_rgba(0,0,0,0.3)] z-10 transition-all duration-300"
-              style={{
-                WebkitBackdropFilter: 'blur(12px)'
-              }}
+              className="flex-shrink-0 p-6 border-b border-gray-200 dark:border-white/10 sticky top-0 bg-white dark:bg-gray-900 z-10 transition-all duration-300"
             >
               <div className="flex flex-row items-center justify-between gap-2 min-w-0">
                 <h2 className="text-2xl font-bold text-black dark:text-white min-w-0">Menú</h2>
@@ -128,12 +121,12 @@ export default function HamburgerMenu({
               {/* Search */}
               <div className="mb-8">
                 <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-600 w-5 h-5" />
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-400 w-5 h-5" />
                   <Input
                     placeholder="Buscar productos..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-12 pr-4 py-5 bg-gray-100 dark:bg-gray-800 border-2 border-transparent focus:bg-white dark:focus:bg-black focus:ring-0 focus:border-accent transition-all text-base font-medium text-black dark:text-white"
+                    className="pl-12 pr-4 py-5 bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 focus:bg-white dark:focus:bg-black focus:ring-0 focus:border-neutral-900 dark:focus:border-white transition-all text-base font-medium text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500"
                   />
                 </div>
               </div>
@@ -153,8 +146,8 @@ export default function HamburgerMenu({
                         }}
                         className={`flex flex-row items-center justify-between gap-3 min-h-[48px] px-6 py-5 transition-all font-medium text-left rounded-[0.77em] touch-manipulation focus-visible:ring-2 focus-visible:ring-offset-2 ${
                           isSelected
-                            ? "bg-black dark:bg-white text-white dark:text-black"
-                            : "bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
+                            ? "bg-neutral-900 dark:bg-white text-white dark:text-black"
+                            : "bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
                         }`}
                       >
                         <span className="text-base font-semibold">{category}</span>
@@ -162,7 +155,7 @@ export default function HamburgerMenu({
                           variant={isSelected ? "secondary" : "outline"} 
                           className={`text-sm font-bold px-3 py-1 ${
                             isSelected 
-                              ? "bg-white dark:bg-black text-black dark:text-white" 
+                              ? "bg-white/20 dark:bg-black/20 text-white dark:text-black" 
                               : ""
                           }`}
                         >
@@ -181,17 +174,14 @@ export default function HamburgerMenu({
               <div className="sticky bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white dark:from-gray-900 to-transparent pointer-events-none md:hidden"></div>
             </div>
 
-            {/* Footer Button - Sticky con glassmorphism mejorado */}
+            {/* Footer Button */}
             <div 
-              className="flex-shrink-0 p-6 border-t border-white/20 dark:border-white/10 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-[0_-4px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_-4px_24px_rgba(0,0,0,0.3)] sticky bottom-0 transition-all duration-300"
-              style={{
-                WebkitBackdropFilter: 'blur(12px)'
-              }}
+              className="flex-shrink-0 p-6 border-t border-gray-200 dark:border-white/10 bg-white dark:bg-gray-900 sticky bottom-0 transition-all duration-300"
             >
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="w-full sm:w-auto min-h-[48px] py-4 px-6 bg-black dark:bg-white text-white dark:text-black font-semibold transition-colors rounded-[0.77em] text-base focus-visible:ring-2 focus-visible:ring-offset-2"
+                className="w-full sm:w-auto min-h-[48px] py-4 px-6 bg-neutral-900 text-white font-semibold transition-colors rounded-[0.77em] text-base focus-visible:ring-2 focus-visible:ring-offset-2"
               >
                 Ver Productos
               </button>

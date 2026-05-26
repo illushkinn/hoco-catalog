@@ -56,12 +56,12 @@ export default function FloatingCart() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Cerrar carrito" : "Abrir carrito de compras"}
         aria-expanded={isOpen}
-        className="halo-cart fixed bottom-6 right-6 z-40 bg-primary text-primary-foreground rounded-full min-h-[48px] min-w-[48px] p-3 transition-all hover:scale-110 flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-offset-2"
+        className="halo-cart fixed bottom-6 right-6 z-40 bg-neutral-900 text-white rounded-full min-h-[48px] min-w-[48px] p-3 transition-all hover:scale-110 flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-offset-2"
       >
         <ShoppingCart className="w-6 h-6" />
         {itemCount > 0 && (
           <span 
-            className="absolute -top-2.5 -right-2.5 bg-black text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shadow-xl border-2 border-white"
+            className="absolute -top-2.5 -right-2.5 bg-neutral-900 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold shadow-xl border-2 border-white"
           >
             {itemCount}
           </span>
@@ -107,7 +107,7 @@ export default function FloatingCart() {
                   {items.map((item) => (
                     <div
                       key={item.id}
-                      className="flex flex-row items-start justify-start gap-3 p-3 bg-gray-100 dark:bg-gray-800 rounded-[0.77em] min-w-0"
+                      className="flex flex-row items-start justify-start gap-3 p-3 bg-neutral-900/80 dark:bg-neutral-900 rounded-[0.77em] min-w-0"
                     >
                       <img
                         src={item.thumbnail || item.image}
@@ -117,10 +117,10 @@ export default function FloatingCart() {
                         decoding="async"
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium line-clamp-2 text-black dark:text-white">
+                        <p className="text-sm font-medium line-clamp-2 text-white dark:text-white">
                           {item.name}
                         </p>
-                        <p className="text-xs text-gray-600 dark:text-white">
+                        <p className="text-xs text-white/80 dark:text-white">
                           {formatPriceARS(item.price_ars)}
                         </p>
                       </div>
