@@ -356,4 +356,196 @@
   .dark .product-image-blend {
     mix-blend-mode: screen;
   }
+
+  /* ============================================
+     Lightbox — overlay, glassmorphism, nav
+     ============================================ */
+  .lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .lightbox-glass {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: min(90vw, 900px);
+    max-height: 85vh;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .lightbox-image {
+    display: block;
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    transition: transform 0.15s ease-out;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 210;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.77em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .lightbox-close:focus-visible {
+    outline: none;
+    ring: 2px solid white;
+    ring-offset: 2px;
+    box-shadow: 0 0 0 2px white;
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    z-index: 210;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.77em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+
+  .lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .lightbox-nav:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px white;
+  }
+
+  .lightbox-nav--prev {
+    left: 1rem;
+  }
+
+  .lightbox-nav--next {
+    right: 1rem;
+  }
+
+  .lightbox-counter {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 210;
+    padding: 0.5rem 1rem;
+    color: white;
+    font-size: 0.875rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.77em;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .lightbox-zoom-badge {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 210;
+    padding: 0.35rem 0.75rem;
+    color: white;
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 0.77em;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    pointer-events: none;
+  }
+
+  /* ============================================
+     Halo animations — botones flotantes
+     ============================================ */
+
+  /* WhatsApp — halo verde pulsante */
+  @keyframes halo-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 0 8px rgba(37, 211, 102, 0.15),
+        0 8px 24px rgba(37, 211, 102, 0.35);
+    }
+    50% {
+      box-shadow:
+        0 0 0 14px rgba(37, 211, 102, 0.05),
+        0 8px 32px rgba(37, 211, 102, 0.2);
+    }
+  }
+
+  .halo-whatsapp {
+    box-shadow:
+      0 0 0 8px rgba(37, 211, 102, 0.15),
+      0 0 0 16px rgba(37, 211, 102, 0.05),
+      0 8px 24px rgba(37, 211, 102, 0.35);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .halo-whatsapp {
+      animation: halo-pulse 2.5s ease-in-out infinite;
+    }
+  }
+
+  /* Carrito — halo neutro con profundidad */
+  .halo-cart {
+    box-shadow:
+      0 0 0 8px rgba(0, 0, 0, 0.08),
+      0 0 0 16px rgba(0, 0, 0, 0.03),
+      0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .dark .halo-cart {
+    box-shadow:
+      0 0 0 8px rgba(255, 255, 255, 0.06),
+      0 0 0 16px rgba(255, 255, 255, 0.02),
+      0 8px 24px rgba(0, 0, 0, 0.5);
+  }
 }

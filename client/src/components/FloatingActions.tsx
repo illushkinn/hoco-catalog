@@ -28,7 +28,7 @@ export default function FloatingActions() {
         href="https://wa.me/5491124063009?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20tus%20productos."
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full min-h-[48px] min-w-[48px] shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-offset-2"
+        className="halo-whatsapp bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full min-h-[48px] min-w-[48px] transition-all hover:scale-110 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-offset-2"
         aria-label="Contactar por WhatsApp"
       >
         <svg 

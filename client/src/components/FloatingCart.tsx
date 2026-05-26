@@ -56,7 +56,7 @@ export default function FloatingCart() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Cerrar carrito" : "Abrir carrito de compras"}
         aria-expanded={isOpen}
-        className="fixed bottom-6 right-6 z-40 bg-primary text-primary-foreground rounded-full min-h-[48px] min-w-[48px] p-3 shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-offset-2"
+        className="halo-cart fixed bottom-6 right-6 z-40 bg-primary text-primary-foreground rounded-full min-h-[48px] min-w-[48px] p-3 transition-all hover:scale-110 flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-offset-2"
       >
         <ShoppingCart className="w-6 h-6" />
         {itemCount > 0 && (
