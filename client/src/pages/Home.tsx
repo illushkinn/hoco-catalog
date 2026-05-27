@@ -121,7 +121,7 @@ export default function Home() {
 
         <div className="container px-6 md:px-16 pt-7 md:pt-8 flex-1 flex flex-col">
           <motion.div
-            className="max-w-5xl flex-1 flex flex-col justify-between"
+            className="max-w-5xl"
             initial="hidden"
             animate="visible"
             variants={{
@@ -131,73 +131,70 @@ export default function Home() {
               },
             }}
           >
-            {/* Top content group */}
-            <div>
-              {/* Eyebrow */}
-              <motion.p
+            {/* Eyebrow */}
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
+                visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+              }}
+              className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-neutral-400 dark:text-neutral-500 mb-4 sm:mb-8"
+            >
+              Hoco · Accesorios Premium
+            </motion.p>
+
+            {/* Main heading — oversized, editorial */}
+            <h1 className="text-[clamp(2.8rem,14vw,7rem)] font-bold text-black dark:text-white leading-[0.82] tracking-[-0.06em] -ml-[0.04em]">
+              <motion.span
                 variants={{
-                  hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
-                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+                  hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
                 }}
-                className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-neutral-400 dark:text-neutral-500 mb-4 sm:mb-8"
+                className="block"
               >
-                Hoco · Accesorios Premium
-              </motion.p>
-
-              {/* Main heading — oversized, editorial */}
-              <h1 className="text-[clamp(2.8rem,14vw,7rem)] font-bold text-black dark:text-white leading-[0.82] tracking-[-0.06em] -ml-[0.04em]">
-                <motion.span
-                  variants={{
-                    hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
-                    visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
-                  }}
-                  className="block"
-                >
-                  Accesorios
-                </motion.span>
-                <motion.span
-                  variants={{
-                    hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
-                    visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
-                  }}
-                  className="block text-neutral-500 dark:text-neutral-400"
-                >
-                  de calidad
-                </motion.span>
-                <motion.span
-                  variants={{
-                    hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
-                    visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
-                  }}
-                  className="block"
-                >
-                  para tu tienda
-                </motion.span>
-              </h1>
-
-              {/* Description */}
-              <motion.p
+                Accesorios
+              </motion.span>
+              <motion.span
                 variants={{
-                  hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
-                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+                  hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
                 }}
-                className="text-base sm:text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-lg mt-5 sm:mt-8 leading-relaxed"
+                className="block text-neutral-500 dark:text-neutral-400"
               >
-                Cables y auriculares de la marca{" "}
-                <strong className="font-semibold text-neutral-900 dark:text-neutral-100">
-                  HOCO
-                </strong>
-                . Envíos a todo Mar del Plata y el país.
-              </motion.p>
-            </div>
+                de calidad
+              </motion.span>
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
+                }}
+                className="block"
+              >
+                para tu tienda
+              </motion.span>
+            </h1>
 
-            {/* Features — pushed to bottom */}
+            {/* Description */}
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
+                visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+              }}
+              className="text-base sm:text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-lg mt-5 sm:mt-8 leading-relaxed"
+            >
+              Cables y auriculares de la marca{" "}
+              <strong className="font-semibold text-neutral-900 dark:text-neutral-100">
+                HOCO
+              </strong>
+              . Envíos a todo Mar del Plata y el país.
+            </motion.p>
+
+            {/* Features — justo debajo del texto */}
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
               }}
-              className="flex flex-row flex-wrap items-center gap-5 sm:gap-7"
+              className="flex flex-row flex-wrap items-center gap-5 sm:gap-7 mt-4 sm:mt-6"
             >
               <div className="flex items-center gap-2 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
                 <span className="text-amber-600 dark:text-amber-400 text-base sm:text-lg" aria-hidden="true">✓</span>
