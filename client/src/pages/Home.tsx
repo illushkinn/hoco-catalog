@@ -113,13 +113,13 @@ export default function Home() {
 
       {/* Hero Section — Editorial Tech */}
       <motion.section
-        className="relative w-full min-h-screen flex bg-white dark:bg-black overflow-hidden"
+        className="relative w-full min-h-screen flex flex-col bg-white dark:bg-black overflow-hidden"
         style={{ y: heroY, opacity: heroOpacity }}
       >
         {/* Subtle background grain */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.06] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMCIgLz48L3N2Zz4=')]" />
 
-        <div className="container px-6 md:px-16 pt-7 pb-4 md:pt-8 md:pb-6 flex flex-col h-full">
+        <div className="container px-6 md:px-16 pt-7 md:pt-8 flex-1 flex flex-col">
           <motion.div
             className="max-w-5xl flex-1 flex flex-col justify-between"
             initial="hidden"
@@ -197,7 +197,7 @@ export default function Home() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
               }}
-              className="flex flex-row flex-wrap items-center gap-5 sm:gap-7 pb-2 sm:pb-4"
+              className="flex flex-row flex-wrap items-center gap-5 sm:gap-7"
             >
               <div className="flex items-center gap-2 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
                 <span className="text-amber-600 dark:text-amber-400 text-base sm:text-lg" aria-hidden="true">✓</span>
