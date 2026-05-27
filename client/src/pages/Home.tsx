@@ -315,14 +315,14 @@ export default function Home() {
           aria-hidden
         />
 
-        {/* Hero image moved to footer — sin border-radius */}
-        <div className="w-full overflow-hidden">
+        {/* Hero image moved to footer — sin border-radius, ancho controlado */}
+        <div className="w-full flex justify-center px-6 md:px-16 py-4">
           <img
             src="/escaparate.webp"
             alt="Escaparate de accesorios HOCO"
             width={1080}
             height={1278}
-            className="w-full h-auto object-cover"
+            className="w-full max-w-4xl h-auto object-contain"
             loading="lazy"
             decoding="async"
           />
