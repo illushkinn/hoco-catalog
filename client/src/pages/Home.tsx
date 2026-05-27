@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { X } from "lucide-react";
@@ -26,6 +27,11 @@ export default function Home() {
     new Set() // Vacío inicialmente - sin categorías seleccionadas
   );
   const [showAvailableOnly, setShowAvailableOnly] = useState(false);
+
+  // Scroll-linked hero parallax
+  const { scrollY } = useScroll();
+  const heroY = useTransform(scrollY, [0, 500], [0, 80]);
+  const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
 
   // Filtrar productos según búsqueda y categorías
   const filteredProducts = useMemo(() => {
@@ -105,78 +111,106 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative w-full pb-[25vh] bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-gray-950 dark:to-black md:bg-gradient-to-b md:from-white md:via-gray-100 md:to-gray-200 md:dark:from-gray-900 md:dark:via-black md:dark:to-black">
-        <div className="container pt-0 pb-4 sm:pb-5 md:pb-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-8 items-start">
-            
-            {/* Texto Hero */}
-            <div className="hero-fade-in text-center md:text-left flex flex-col items-center md:items-start justify-start gap-3 sm:gap-4 md:self-center py-4 sm:py-12 md:py-16 min-w-0">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-black dark:text-white leading-tight min-w-0">
-                <span className="block md:hidden">
-                  Accesorios
-                  <br />
-                  de calidad
-                  <br />
-                  para tu tienda
-                </span>
-                <span className="hidden md:block">
-                  Accesorios de calidad
-                  <br />
-                  para tu tienda
-                </span>
-              </h1>
-              <div className="flex flex-col items-center md:items-start justify-start gap-1 w-full min-w-0">
-                <p className="text-lg sm:text-xl text-black dark:text-white max-w-lg mx-auto md:mx-0 min-w-0">
-                  Cables y auriculares de la marca{" "}
-                  <span className="font-semibold text-gray-900 bg-yellow-400 dark:bg-yellow-500 dark:text-gray-950 px-1 rounded-sm">
-                    HOCO
-                  </span>
-                  .
-                </p>
-                <p className="text-lg sm:text-xl text-black dark:text-white max-w-lg mx-auto md:mx-0 min-w-0">
-                  Envíos a todo Mar del Plata y el país.
-                </p>
-              </div>
-              <div className="flex flex-row flex-wrap items-center justify-center md:justify-start gap-4 text-base text-black dark:text-white min-w-0">
-                <div className="flex flex-row items-center justify-start gap-2 min-w-0">
-                  <span className="text-amber-700 dark:text-amber-500 text-xl" aria-hidden="true">✓</span>
-                  <span>Entrega Rápida</span>
-                </div>
-                <div className="flex flex-row items-center justify-start gap-2 min-w-0">
-                  <span className="text-amber-700 dark:text-amber-500 text-xl" aria-hidden="true">✓</span>
-                  <span>Precios Mayoristas</span>
-                </div>
-              </div>
-            </div>
+      {/* Hero Section — Editorial Tech */}
+      <motion.section
+        className="relative w-full min-h-screen flex items-center bg-white dark:bg-black overflow-hidden"
+        style={{ y: heroY, opacity: heroOpacity }}
+      >
+        {/* Subtle background grain */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.06] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMCIgLz48L3N2Zz4=')]" />
 
-            {/* Imagen Hero — aislada del layout de hermanos (prep. HTML in Canvas / WICG) */}
-            <div className="hero-fade-in-delayed flex flex-col items-center justify-center md:items-end md:justify-center min-w-0 mt-4 sm:mt-6 md:self-center md:mt-10">
-              {/*
-                FUTURE (WICG HTML in Canvas): cuando <html-in-canvas> esté disponible,
-                migrar el pintado de esta imagen a un canvas aislado sin depender del flujo flex/grid del hero.
-              */}
-              <div className="hero-image-host isolate relative w-full max-w-[280px] sm:max-w-xs md:max-w-sm mx-auto md:mx-0">
-                <div className="relative overflow-hidden rounded-[0.77em] shadow-2xl aspect-[1080/1278] min-h-[280px] sm:min-h-0">
-                  <img
-                    src="/escaparate.webp"
-                    alt="Escaparate de accesorios para celular marca HOCO en Mar del Plata"
-                    width={1080}
-                    height={1278}
-                    className="w-full h-full object-cover rounded-2xl"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                  />
-                  <span className="hero-badge" aria-hidden="true">
-                    + 60 productos!
-                  </span>
-                </div>
+        <div className="container px-6 md:px-12 py-24 md:py-32">
+          <motion.div
+            className="max-w-4xl"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.18, delayChildren: 0.15 },
+              },
+            }}
+          >
+            {/* Eyebrow */}
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
+                visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+              }}
+              className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-neutral-400 dark:text-neutral-500 mb-6 sm:mb-8"
+            >
+              Hoco · Accesorios Premium
+            </motion.p>
+
+            {/* Main heading — oversized, editorial */}
+            <h1 className="text-[clamp(2.8rem,14vw,7rem)] font-bold text-black dark:text-white leading-[0.82] tracking-[-0.06em] -ml-[0.04em]">
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
+                }}
+                className="block"
+              >
+                Accesorios
+              </motion.span>
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
+                }}
+                className="block text-neutral-500 dark:text-neutral-400"
+              >
+                de calidad
+              </motion.span>
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
+                }}
+                className="block"
+              >
+                para tu tienda
+              </motion.span>
+            </h1>
+
+            {/* Description */}
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
+                visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+              }}
+              className="text-base sm:text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-md mt-6 sm:mt-8 leading-relaxed"
+            >
+              Cables y auriculares de la marca{" "}
+              <strong className="font-semibold text-neutral-900 dark:text-neutral-100">
+                HOCO
+              </strong>
+              . Envíos a todo Mar del Plata y el país.
+            </motion.p>
+
+            {/* Features */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
+              }}
+              className="flex flex-row flex-wrap items-center gap-5 sm:gap-7 mt-8 sm:mt-10"
+            >
+              <div className="flex items-center gap-2.5 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
+                <span className="w-1 h-1 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+                Entrega Rápida
               </div>
-            </div>
-          </div>
+              <div className="flex items-center gap-2.5 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
+                <span className="w-1 h-1 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+                Precios Mayoristas
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+
+        {/* Decorative line — subtle */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-neutral-200/60 via-neutral-300/30 to-transparent dark:from-neutral-800/60 dark:via-neutral-700/30" />
+      </motion.section>
 
       {/* Main Content */}
       <main id="main-content" className="container py-4 sm:py-8 flex-grow bg-white dark:bg-black">
