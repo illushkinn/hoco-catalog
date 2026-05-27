@@ -113,7 +113,7 @@ export default function Home() {
 
       {/* Hero Section — Editorial Tech */}
       <motion.section
-        className="relative w-full min-h-screen flex items-center bg-white dark:bg-black overflow-hidden"
+        className="relative w-full min-h-screen flex items-start bg-white dark:bg-black overflow-hidden"
         style={{ y: heroY, opacity: heroOpacity }}
       >
         {/* Subtle background grain */}
