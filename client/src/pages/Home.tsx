@@ -196,12 +196,12 @@ export default function Home() {
               }}
               className="flex flex-row flex-wrap items-center gap-5 sm:gap-7 mt-8 sm:mt-10"
             >
-              <div className="flex items-center gap-2.5 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
-                <span className="w-1 h-1 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+              <div className="flex items-center gap-2 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
+                <span className="text-amber-600 dark:text-amber-400 text-base sm:text-lg" aria-hidden="true">✓</span>
                 Entrega Rápida
               </div>
-              <div className="flex items-center gap-2.5 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
-                <span className="w-1 h-1 rounded-full bg-neutral-900 dark:bg-neutral-100" />
+              <div className="flex items-center gap-2 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
+                <span className="text-amber-600 dark:text-amber-400 text-base sm:text-lg" aria-hidden="true">✓</span>
                 Precios Mayoristas
               </div>
             </motion.div>
