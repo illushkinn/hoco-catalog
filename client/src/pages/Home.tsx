@@ -119,7 +119,7 @@ export default function Home() {
         {/* Subtle background grain */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.06] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMCIgLz48L3N2Zz4=')]" />
 
-        <div className="container px-6 md:px-16 pt-10 pb-6 md:pt-12 md:pb-10">
+        <div className="container px-6 md:px-16 pt-8 pb-6 md:pt-10 md:pb-10">
           <motion.div
             className="max-w-5xl"
             initial="hidden"
