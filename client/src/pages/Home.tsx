@@ -111,7 +111,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-8 items-start">
             
             {/* Texto Hero */}
-            <div className="hero-fade-in text-center md:text-left flex flex-col items-center md:items-start justify-start gap-3 sm:gap-4 md:self-center py-4 sm:py-12 md:py-16 min-w-0">
+            <div className="hero-fade-in text-left flex flex-col items-start justify-start gap-3 sm:gap-4 md:self-center py-4 sm:py-12 md:py-16 min-w-0">
               <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-black dark:text-white leading-tight min-w-0">
                 Accesorios de calidad
                 <br />
