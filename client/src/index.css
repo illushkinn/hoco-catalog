@@ -131,9 +131,6 @@
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
   }
-  p {
-    text-wrap: pretty;
-  }
   
   html::-webkit-scrollbar,
   body::-webkit-scrollbar {
@@ -528,17 +525,8 @@
     }
   }
 
-  .halo-whatsapp {
-    box-shadow:
-      0 0 0 8px rgba(37, 211, 102, 0.15),
-      0 0 0 16px rgba(37, 211, 102, 0.05),
-      0 8px 24px rgba(37, 211, 102, 0.35);
-  }
 
   @media (prefers-reduced-motion: no-preference) {
-    .halo-whatsapp {
-      animation: halo-pulse 2.5s ease-in-out infinite;
-    }
   }
 
   /* Carrito — halo neutro con profundidad */
