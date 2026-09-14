@@ -18,7 +18,6 @@ export default function FloatingActions() {
   }, []);
 
   const scrollToTop = () => {
-    setShowScrollTop(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
