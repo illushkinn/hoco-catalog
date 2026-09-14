@@ -119,9 +119,9 @@ export default function Home() {
         {/* Subtle background grain */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.06] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMCIgLz48L3N2Zz4=')]" />
 
-        <div className="container px-6 md:px-16 pt-7 md:pt-8 flex-1 flex flex-col">
+        <div className="container px-6 md:px-16 pt-12 md:pt-20 flex-1 flex flex-col">
           <motion.div
-            className="max-w-5xl"
+            className="max-w-5xl flex-1 flex flex-col"
             initial="hidden"
             animate="visible"
             variants={{
@@ -137,13 +137,13 @@ export default function Home() {
                 hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
                 visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
               }}
-              className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-neutral-400 dark:text-neutral-500 mb-4 sm:mb-8"
+              className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-neutral-400 dark:text-neutral-500 mb-2 sm:mb-8"
             >
               Hoco · Accesorios Premium
             </motion.p>
 
             {/* Main heading — oversized, editorial */}
-            <h1 className="text-[clamp(2.8rem,14vw,7rem)] font-bold text-black dark:text-white leading-[0.82] tracking-[-0.06em] -ml-[0.04em]">
+            <h1 className="text-[clamp(3rem,16vw,8rem)] font-bold text-black dark:text-white leading-[0.82] tracking-[-0.06em] -ml-[0.04em]">
               <motion.span
                 variants={{
                   hidden: { opacity: 0, y: 60, filter: "blur(12px)" },
@@ -179,7 +179,7 @@ export default function Home() {
                 hidden: { opacity: 0, y: 30, filter: "blur(6px)" },
                 visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
               }}
-              className="text-base sm:text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-lg mt-5 sm:mt-8 leading-relaxed"
+              className="text-lg sm:text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-lg mt-4 sm:mt-10 leading-relaxed"
             >
               Cables y auriculares de la marca{" "}
               <strong className="font-semibold text-neutral-900 dark:text-neutral-100">
@@ -194,7 +194,7 @@ export default function Home() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
               }}
-              className="flex flex-row flex-wrap items-center gap-5 sm:gap-7 mt-4 sm:mt-6"
+              className="flex flex-row flex-wrap items-center gap-5 sm:gap-7 mt-6 sm:mt-8"
             >
               <div className="flex items-center gap-2 text-sm sm:text-base text-neutral-600 dark:text-neutral-400">
                 <span className="text-amber-600 dark:text-amber-400 text-base sm:text-lg" aria-hidden="true">✓</span>
@@ -205,6 +205,21 @@ export default function Home() {
                 Precios Mayoristas
               </div>
             </motion.div>
+
+            {/* Mobile hero image — solo en mobile, justo debajo de los checks */}
+            <motion.img
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+              }}
+              src="/escaparate.webp"
+              alt="Escaparate de accesorios HOCO"
+              width={1080}
+              height={1278}
+              className="block md:hidden w-full max-h-[35vh] object-contain mt-12 flex-shrink-0"
+              loading="lazy"
+              decoding="async"
+            />
           </motion.div>
         </div>
 
