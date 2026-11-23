@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const WHATSAPP_NUMBER = "5491124063009";
+const WHATSAPP_MESSAGE = "Hola, me interesa conocer más sobre sus productos.";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
 /**
  * Botones flotantes: WhatsApp y Volver Arriba
  */
@@ -25,7 +29,7 @@ export default function FloatingActions() {
     <div className="fixed bottom-24 right-6 z-40 flex flex-col gap-3">
       {/* Botón WhatsApp con logo oficial */}
       <a
-        href="https://wa.me/5491124063009?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20tus%20productos."
+        href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
         className="halo-whatsapp bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full min-h-[48px] min-w-[48px] transition-all hover:scale-110 flex items-center justify-center focus-visible:ring-2 focus-visible:ring-offset-2"
